@@ -23,7 +23,7 @@ const inventory = [
 
 app.get("/api/inventory", (req, res) => {
     if (req.query.item) {
-        const filteredItems = inventory.filter(element => element.toLowerCase().includes(req.query.item.toLocaleLowerCase()))
+        const filteredItems = inventory.filter(element => element.toLowerCase().includes(req.query.item.toLowerCase()))
 
         res.status(200).send(filteredItems)
     } else {
